@@ -26,4 +26,4 @@ No caso dos campos data, é importante determinar valores de ano mínimo e máxi
 
 Na situação em que precisa inserir registros (não somente atualizar), o Pentaho gerencia a relação de Insert / Update com o devido versionamento.
 
-**Importante**: há um (bug)[https://jira.pentaho.com/browse/PDI-2292] no Data Integration. O workaround conhecido é inserir um registro com chave técnica (PK da dimensão) `0` (zero).
+**Importante**: há um [bug](https://jira.pentaho.com/browse/PDI-2292) no Data Integration. O workaround conhecido é inserir um registro com chave técnica (PK da dimensão) `0` (zero).
