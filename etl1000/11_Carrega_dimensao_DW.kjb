@@ -7,7 +7,7 @@
   <created_user>-</created_user>
   <created_date>2017/11/23 00:35:56.219</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2018/09/10 17:14:20.016</modified_date>
+  <modified_date>2018/09/10 17:14:58.680</modified_date>
   <parameters>
     </parameters>
   <slaveservers>
@@ -306,7 +306,7 @@
       <yloc>64</yloc>
     </entry>
     <entry>
-      <name>Transformation</name>
+      <name>dim cliente</name>
       <description />
       <type>TRANS</type>
       <specification_method>rep_name</specification_method>
@@ -343,7 +343,7 @@
       <yloc>96</yloc>
     </entry>
     <entry>
-      <name>Transformation 2</name>
+      <name>dim vendedor</name>
       <description />
       <type>TRANS</type>
       <specification_method>rep_name</specification_method>
@@ -451,7 +451,7 @@
   <hops>
     <hop>
       <from>START</from>
-      <to>Transformation</to>
+      <to>dim cliente</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -460,7 +460,7 @@
     </hop>
     <hop>
       <from>START</from>
-      <to>Transformation 2</to>
+      <to>dim vendedor</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -468,7 +468,7 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>Transformation</from>
+      <from>dim cliente</from>
       <to>Mail</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -477,7 +477,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Transformation 2</from>
+      <from>dim vendedor</from>
       <to>Mail</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -486,7 +486,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Transformation</from>
+      <from>dim cliente</from>
       <to>Success</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -495,7 +495,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Transformation 2</from>
+      <from>dim vendedor</from>
       <to>Success</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
