@@ -1,2 +1,4 @@
 <Schema name="Motor Inc" description="Description here..." measuresCaption="measures caption here...">
+  <Cube name="Motor Inc Vendas" caption="Cube caption here..." visible="true" description="Cube description here..." cache="true" enabled="true">
+  </Cube>
 </Schema>
