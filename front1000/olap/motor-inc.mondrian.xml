@@ -22,6 +22,10 @@
   <Cube name="Motor Inc Vendas" visible="true" description="Cube description here..." cache="true" enabled="true">
     <Table name="tbl_ft_vnds">
     </Table>
+    <DimensionUsage source="Tempo" name="Tempo Pedido" visible="true" foreignKey="TempoIdPedido">
+    </DimensionUsage>
+    <DimensionUsage source="Tempo" name="Tempo Entrega" visible="true" foreignKey="TempoIdEntrega">
+    </DimensionUsage>
     <Measure name="Quantidade Pedida" column="QuantidadePedida" datatype="Integer" formatString="#,##0.00" aggregator="sum" description="Measure description here..." visible="true">
     </Measure>
   </Cube>
