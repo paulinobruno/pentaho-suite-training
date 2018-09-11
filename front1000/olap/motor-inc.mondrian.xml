@@ -40,6 +40,16 @@
         </Level>
       </Hierarchy>
     </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="ProdutoId" name="Produto">
+      <Hierarchy visible="true" hasAll="true" allMemberName="Todos os produtos" primaryKey="ProdutoId">
+        <Table name="tbl_dmns_prdt">
+        </Table>
+        <Level name="Linha" visible="true" column="LinhaProduto" type="String" uniqueMembers="false" levelType="Regular">
+        </Level>
+        <Level name="Fornecedor" visible="true" column="FornecedorProduto" uniqueMembers="false">
+        </Level>
+      </Hierarchy>
+    </Dimension>
     <Measure name="Quantidade Pedida" column="QuantidadePedida" datatype="Integer" formatString="#,##0.00" aggregator="sum" description="Measure description here..." visible="true">
     </Measure>
   </Cube>
