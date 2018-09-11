@@ -1,6 +1,8 @@
 <Schema name="Motor Inc" description="Description here..." measuresCaption="measures caption here...">
   <Cube name="Motor Inc Vendas" caption="Cube caption here..." visible="true" description="Cube description here..." cache="true" enabled="true">
-    <Table name="tbl_ft_vnds" alias="">
+    <Table name="tbl_ft_vnds">
     </Table>
+    <Measure name="Quantidade Pedida" column="QuantidadePedida" datatype="Integer" formatString="#,##0.00" aggregator="sum" description="Measure description here..." visible="true">
+    </Measure>
   </Cube>
 </Schema>
