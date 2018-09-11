@@ -109,6 +109,20 @@
     <Measure name="Quantidade Orcada" column="QuantidadeOrcada" datatype="Integer" formatString="#,##0" aggregator="sum" caption="Quantidade Or&#231;ada" visible="true">
     </Measure>
   </Cube>
+  <VirtualCube enabled="true" name="Motor Inc Vendas x Meta">
+    <VirtualCubeDimension cubeName="Motor Inc Vendas" caption="Tempo Pedido" name="Tempo Pedido">
+    </VirtualCubeDimension>
+    <VirtualCubeDimension cubeName="Motor Inc Vendas" name="Cliente">
+    </VirtualCubeDimension>
+    <VirtualCubeMeasure cubeName="Motor Inc Vendas" name="[Measures].[Quantidade Pedida]" visible="true">
+    </VirtualCubeMeasure>
+    <VirtualCubeMeasure cubeName="Motor Inc Metas" name="[Measures].[Quantidade Orcada]" visible="true">
+    </VirtualCubeMeasure>
+    <CalculatedMember name="Alcance" formatString="#,##0" formula="[Measures].[Quantidade Pedida] - [Measures].[Quantidade Orcada]" dimension="Measures" visible="true">
+    </CalculatedMember>
+    <CalculatedMember name="% Alcance" formatString="0.00 %" formula="[Measures].[Quantidade Pedida] / [Measures].[Quantidade Orcada]" dimension="Measures" visible="true">
+    </CalculatedMember>
+  </VirtualCube>
   <Role name="Administrator">
     <SchemaGrant access="all">
     </SchemaGrant>
