@@ -1,16 +1,16 @@
-<Schema name="Motor Inc" description="Description here..." measuresCaption="measures caption here...">
-  <Dimension type="TimeDimension" visible="true" name="Tempo" caption="Dimension caption here..." description="Dimension description here...">
-    <Hierarchy name="Calendario" visible="true" hasAll="true" allMemberName="Todos os calend&#225;rios" allMemberCaption="Todos os calend&#225;rios (caption)" primaryKey="TempoId" caption="Calend&#225;rio caption" description="Calendario description">
+<Schema name="Motor Inc" description="Description here...">
+  <Dimension type="TimeDimension" visible="true" name="Tempo" description="Dimension description here...">
+    <Hierarchy name="Calendario" visible="true" hasAll="true" allMemberName="Todos os calendarios" allMemberCaption="Todos os calend&#225;rios" primaryKey="TempoId" caption="Calend&#225;rio" description="Calendario description">
       <Table name="tbl_dmns_tmp">
       </Table>
-      <Level name="Ano" visible="true" column="AnoTempo" type="String" uniqueMembers="false" levelType="TimeYears" caption="Ano caption" description="Ano description">
+      <Level name="Ano" visible="true" column="AnoTempo" type="String" uniqueMembers="false" levelType="TimeYears" description="Ano description">
       </Level>
       <Level name="Trimestre" visible="true" column="TrimestreTempo" type="String" uniqueMembers="false" levelType="TimeQuarters" description="Trimestre description">
       </Level>
       <Level name="Mes" visible="true" column="MesTempo" nameColumn="MesDescTempo" type="String" uniqueMembers="false" levelType="TimeMonths" caption="M&#234;s">
       </Level>
     </Hierarchy>
-    <Hierarchy name="Semana" visible="true" hasAll="true" allMemberName="Todas as semanas" allMemberCaption="Todas as semanas (caption)" primaryKey="TempoId" caption="Semana caption" description="Semana description">
+    <Hierarchy name="Semana" visible="true" hasAll="true" allMemberName="Todas as semanas" allMemberCaption="Todas as semanas (caption)" primaryKey="TempoId" description="Semana description">
       <Table name="tbl_dmns_tmp" alias="">
       </Table>
       <Level name="Ano" visible="true" column="AnoTempo" type="String" uniqueMembers="false" levelType="TimeYears">
@@ -19,7 +19,7 @@
       </Level>
     </Hierarchy>
   </Dimension>
-  <Cube name="Motor Inc Vendas" caption="Cube caption here..." visible="true" description="Cube description here..." cache="true" enabled="true">
+  <Cube name="Motor Inc Vendas" visible="true" description="Cube description here..." cache="true" enabled="true">
     <Table name="tbl_ft_vnds">
     </Table>
     <Measure name="Quantidade Pedida" column="QuantidadePedida" datatype="Integer" formatString="#,##0.00" aggregator="sum" description="Measure description here..." visible="true">
