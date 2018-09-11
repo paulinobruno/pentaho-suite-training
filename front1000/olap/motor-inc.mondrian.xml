@@ -48,6 +48,8 @@
         </Level>
         <Level name="Fornecedor" visible="true" column="FornecedorProduto" uniqueMembers="false">
         </Level>
+        <Level name="Produto" visible="true" column="NomeProduto" uniqueMembers="false">
+        </Level>
       </Hierarchy>
     </Dimension>
     <Dimension type="StandardDimension" visible="true" name="Status" caption="Situa&#231;&#227;o">
