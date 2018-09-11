@@ -50,6 +50,12 @@
         </Level>
       </Hierarchy>
     </Dimension>
+    <Dimension type="StandardDimension" visible="true" name="Status" caption="Situa&#231;&#227;o">
+      <Hierarchy visible="true" hasAll="true" allMemberName="Todas as situacoes" allMemberCaption="Todas as situa&#231;&#245;es">
+        <Level name="Situacao" visible="true" column="Situacao" uniqueMembers="false" caption="Situa&#231;&#227;o">
+        </Level>
+      </Hierarchy>
+    </Dimension>
     <Measure name="Quantidade Pedida" column="QuantidadePedida" datatype="Integer" formatString="#,##0.00" aggregator="sum" description="Measure description here..." visible="true">
     </Measure>
   </Cube>
