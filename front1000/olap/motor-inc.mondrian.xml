@@ -74,7 +74,7 @@
     </Measure>
     <Measure name="Preco Total" column="PrecoTotal" formatString="#,##0.00" aggregator="sum" caption="Pre&#231;o Total" visible="true">
     </Measure>
-    <CalculatedMember name="Percentual Produto" formatString="" formula="([Produto].CurrentMember / [Produto].CurrentMember.Parent)" dimension="Measures" visible="true">
+    <CalculatedMember name="Percentual Produto" formatString="0.00%" formula="[Produto].CurrentMember / [Produto].CurrentMember.Parent" dimension="Measures" visible="true">
     </CalculatedMember>
   </Cube>
 </Schema>
