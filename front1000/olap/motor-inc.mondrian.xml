@@ -3,9 +3,9 @@
     <Hierarchy name="Calendario" visible="true" hasAll="true" allMemberName="Todos os calendarios" allMemberCaption="Todos os calend&#225;rios" primaryKey="TempoId" caption="Calend&#225;rio" description="Calendario description">
       <Table name="tbl_dmns_tmp">
       </Table>
-      <Level name="Ano" visible="true" column="AnoTempo" type="String" uniqueMembers="false" levelType="TimeYears" description="Ano description">
+      <Level name="Ano" visible="true" column="AnoTempo" type="String" uniqueMembers="false" levelType="TimeYears">
       </Level>
-      <Level name="Trimestre" visible="true" column="TrimestreTempo" type="String" uniqueMembers="false" levelType="TimeQuarters" description="Trimestre description">
+      <Level name="Trimestre" visible="true" column="TrimestreTempo" type="String" uniqueMembers="false" levelType="TimeQuarters">
       </Level>
       <Level name="Mes" visible="true" column="MesTempo" nameColumn="MesDescTempo" type="String" uniqueMembers="false" levelType="TimeMonths" caption="M&#234;s">
       </Level>
