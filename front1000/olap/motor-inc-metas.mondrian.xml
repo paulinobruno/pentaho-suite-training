@@ -120,7 +120,9 @@
     </VirtualCubeMeasure>
     <CalculatedMember name="Gap" formatString="#,##0" formula="[Measures].[Quantidade Pedida] - [Measures].[Quantidade Orcada]" dimension="Measures" visible="true">
     </CalculatedMember>
-    <CalculatedMember name="% Gap" formatString="0.00 %" formula="[Measures].[Quantidade Pedida] / [Measures].[Quantidade Orcada] - 1" dimension="Measures" visible="true">
+    <CalculatedMember name="Gap Percent" caption="% Gap" formula="[Measures].[Quantidade Pedida] / [Measures].[Quantidade Orcada] - 1" dimension="Measures" visible="true">
+      <CalculatedMemberProperty name="format_string" expression="IIf(([Measures].[Gap Percent] &#60; 0), &#34;|0.00%|style=red&#34;, &#34;|0.00%|style=black&#34;)">
+      </CalculatedMemberProperty>
     </CalculatedMember>
   </VirtualCube>
   <Role name="Administrator">
