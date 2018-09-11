@@ -74,7 +74,9 @@
     </Measure>
     <Measure name="Preco Total" column="PrecoTotal" formatString="#,##0.00" aggregator="sum" caption="Pre&#231;o Total" visible="true">
     </Measure>
-    <CalculatedMember name="Percentual Produto" formatString="0.00%" formula="[Produto].CurrentMember / [Produto].CurrentMember.Parent" dimension="Measures" visible="true">
+    <CalculatedMember name="Percentual Produto" formula="[Produto].CurrentMember / [Produto].CurrentMember.Parent" dimension="Measures" visible="true">
+      <CalculatedMemberProperty name="format_string" expression="IIF(([Measures].[Percentual Produto] &#60; 0.08), &#34;|0.00%|style=red&#34;, &#34;|0.00%|style=lightgreen&#34;)">
+      </CalculatedMemberProperty>
     </CalculatedMember>
   </Cube>
 </Schema>
