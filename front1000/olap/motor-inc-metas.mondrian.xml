@@ -118,9 +118,9 @@
     </VirtualCubeMeasure>
     <VirtualCubeMeasure cubeName="Motor Inc Metas" name="[Measures].[Quantidade Orcada]" visible="true">
     </VirtualCubeMeasure>
-    <CalculatedMember name="Alcance" formatString="#,##0" formula="[Measures].[Quantidade Pedida] - [Measures].[Quantidade Orcada]" dimension="Measures" visible="true">
+    <CalculatedMember name="Gap" formatString="#,##0" formula="[Measures].[Quantidade Pedida] - [Measures].[Quantidade Orcada]" dimension="Measures" visible="true">
     </CalculatedMember>
-    <CalculatedMember name="% Alcance" formatString="0.00 %" formula="[Measures].[Quantidade Pedida] / [Measures].[Quantidade Orcada]" dimension="Measures" visible="true">
+    <CalculatedMember name="% Gap" formatString="0.00 %" formula="[Measures].[Quantidade Pedida] / [Measures].[Quantidade Orcada] - 1" dimension="Measures" visible="true">
     </CalculatedMember>
   </VirtualCube>
   <Role name="Administrator">
