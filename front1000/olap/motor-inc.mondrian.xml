@@ -72,5 +72,7 @@
     </Dimension>
     <Measure name="Quantidade Pedida" column="QuantidadePedida" datatype="Integer" formatString="#,##0.00" aggregator="sum" description="Measure description here..." visible="true">
     </Measure>
+    <Measure name="Preco Total" column="PrecoTotal" formatString="#,##0.00" aggregator="sum" caption="Pre&#231;o Total" visible="true">
+    </Measure>
   </Cube>
 </Schema>
