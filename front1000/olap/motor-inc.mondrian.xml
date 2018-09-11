@@ -1,4 +1,14 @@
 <Schema name="Motor Inc" description="Description here..." measuresCaption="measures caption here...">
+  <Dimension type="TimeDimension" visible="true" name="Tempo" caption="Dimension caption here..." description="Dimension description here...">
+    <Hierarchy name="Calendario" visible="true" hasAll="true" allMemberName="Todos os calend&#225;rios" allMemberCaption="Todos os calend&#225;rios (caption)" primaryKey="TempoId" caption="Calend&#225;rio caption" description="Calendario description">
+      <Table name="tbl_dmns_tmp">
+      </Table>
+    </Hierarchy>
+    <Hierarchy name="Semana" visible="true" hasAll="true" allMemberName="Todas as semanas" allMemberCaption="Todas as semanas (caption)" primaryKey="TempoId" caption="Semana caption" description="Semana description">
+      <Table name="tbl_dmns_tmp" alias="">
+      </Table>
+    </Hierarchy>
+  </Dimension>
   <Cube name="Motor Inc Vendas" caption="Cube caption here..." visible="true" description="Cube description here..." cache="true" enabled="true">
     <Table name="tbl_ft_vnds">
     </Table>
