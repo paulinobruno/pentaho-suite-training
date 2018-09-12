@@ -1,3 +1,5 @@
+# ETL
+
 ## Configurando o servidor
 
 Variável de ambiente `KETTLE_HOME` é o diretório onde deve estar os arquivos `kettle.properties` e `repositories.xml`.
@@ -27,3 +29,10 @@ No caso dos campos data, é importante determinar valores de ano mínimo e máxi
 Na situação em que precisa inserir registros (não somente atualizar), o Pentaho gerencia a relação de Insert / Update com o devido versionamento.
 
 **Importante**: há um [bug](https://jira.pentaho.com/browse/PDI-2292) no Data Integration. O workaround conhecido é inserir um registro com chave técnica (PK da dimensão) `0` (zero).
+
+## Trabalhando com a versão 8.1 e MySQL
+
+Para o módulo de reporting funcionar, é importante definir (tanto no Pentaho Server como no Report Designer) no data source a seguinte opção:
+
+- Nome: `generateSimpleParameterMetadata`
+- Valor: `true`

@@ -1,0 +1,84 @@
+<Schema name="Motor Inc" description="Description here...">
+  <Dimension type="TimeDimension" visible="true" name="Tempo" description="Dimension description here...">
+    <Hierarchy name="Calendario" visible="true" hasAll="true" allMemberName="Todos os calendarios" allMemberCaption="Todos os calend&#225;rios" primaryKey="TempoId" caption="Calend&#225;rio" description="Calendario description">
+      <Table name="tbl_dmns_tmp">
+      </Table>
+      <Level name="Ano" visible="true" column="AnoTempo" type="String" uniqueMembers="false" levelType="TimeYears">
+      </Level>
+      <Level name="Trimestre" visible="true" column="TrimestreTempo" type="String" uniqueMembers="false" levelType="TimeQuarters">
+      </Level>
+      <Level name="Mes" visible="true" column="MesTempo" nameColumn="MesDescTempo" type="String" uniqueMembers="false" levelType="TimeMonths" caption="M&#234;s">
+      </Level>
+    </Hierarchy>
+    <Hierarchy name="Semana" visible="true" hasAll="true" allMemberName="Todas as semanas" allMemberCaption="Todas as semanas (caption)" primaryKey="TempoId" description="Semana description">
+      <Table name="tbl_dmns_tmp" alias="">
+      </Table>
+      <Level name="Ano" visible="true" column="AnoTempo" type="String" uniqueMembers="false" levelType="TimeYears">
+      </Level>
+      <Level name="Semana" visible="true" column="SemanaAnoTempo" type="String" uniqueMembers="false" levelType="TimeWeeks">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Cube name="Motor Inc Vendas" visible="true" description="Cube description here..." cache="true" enabled="true">
+    <Table name="tbl_ft_vnds">
+    </Table>
+    <DimensionUsage source="Tempo" name="Tempo Pedido" caption="Tempo Pedido" visible="true" foreignKey="TempoIdPedido">
+    </DimensionUsage>
+    <DimensionUsage source="Tempo" name="Tempo Entrega" caption="Tempo Entrega" visible="true" foreignKey="TempoIdEntrega">
+    </DimensionUsage>
+    <Dimension type="StandardDimension" visible="true" foreignKey="ClienteId" name="Cliente">
+      <Hierarchy visible="true" hasAll="true" allMemberName="Todos os clientes" primaryKey="ClienteId">
+        <Table name="tbl_dmns_clnt">
+        </Table>
+        <Level name="Territorio" visible="true" column="TerritorioCliente" type="String" uniqueMembers="false" levelType="Regular" caption="Territ&#243;rio">
+        </Level>
+        <Level name="Pais" visible="true" column="PaisCliente" type="String" uniqueMembers="false" levelType="Regular" caption="Pa&#237;s">
+        </Level>
+        <Level name="Estado" visible="true" column="EstadoCliente" type="String" uniqueMembers="false" levelType="Regular">
+        </Level>
+        <Level name="Cidade" visible="true" column="CidadeCliente" type="String" uniqueMembers="false" levelType="Regular">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="ProdutoId" name="Produto">
+      <Hierarchy visible="true" hasAll="true" allMemberName="Todos os produtos" primaryKey="ProdutoId">
+        <Table name="tbl_dmns_prdt">
+        </Table>
+        <Level name="Linha" visible="true" column="LinhaProduto" type="String" uniqueMembers="false" levelType="Regular">
+        </Level>
+        <Level name="Fornecedor" visible="true" column="FornecedorProduto" uniqueMembers="false">
+        </Level>
+        <Level name="Produto" visible="true" column="NomeProduto" uniqueMembers="false">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" name="Status" caption="Situa&#231;&#227;o">
+      <Hierarchy visible="true" hasAll="true" allMemberName="Todas as situacoes" allMemberCaption="Todas as situa&#231;&#245;es">
+        <Level name="Situacao" visible="true" column="Situacao" uniqueMembers="false" caption="Situa&#231;&#227;o">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="VendedorId" name="Vendedor">
+      <Hierarchy visible="true" hasAll="true" allMemberName="Todos os vendedores" primaryKey="VendedorId">
+        <Table name="tbl_dmns_vnddr">
+        </Table>
+        <Level name="CEO" visible="true" column="NomeVendedor3" uniqueMembers="false">
+        </Level>
+        <Level name="VP" visible="true" column="NomeVendedor2" uniqueMembers="false">
+        </Level>
+        <Level name="Gerente" visible="true" column="NomeVendedor1" uniqueMembers="false">
+        </Level>
+        <Level name="Vendedor" visible="true" column="NomeVendedor" uniqueMembers="false">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Measure name="Quantidade Pedida" column="QuantidadePedida" datatype="Integer" formatString="#,##0.00" aggregator="sum" description="Measure description here..." visible="true">
+    </Measure>
+    <Measure name="Preco Total" column="PrecoTotal" formatString="#,##0.00" aggregator="sum" caption="Pre&#231;o Total" visible="true">
+    </Measure>
+    <CalculatedMember name="Percentual Produto" formula="[Produto].CurrentMember / [Produto].CurrentMember.Parent" dimension="Measures" visible="true">
+      <CalculatedMemberProperty name="format_string" expression="IIF(([Measures].[Percentual Produto] &#60; 0.08), &#34;|0.00%|style=red&#34;, &#34;|0.00%|style=lightgreen&#34;)">
+      </CalculatedMemberProperty>
+    </CalculatedMember>
+  </Cube>
+</Schema>
