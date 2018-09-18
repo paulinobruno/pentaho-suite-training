@@ -428,18 +428,20 @@
     <created_user>-</created_user>
     <created_date>2018/09/18 09:35:05.143</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2018/09/18 09:58:33.565</modified_date>
+    <modified_date>2018/09/18 10:05:59.694</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
     <notepad>
-      <note>1a. 18,7"</note>
+      <note>1a. 18,7"
+2a.   9,9" - multiple copies
+2a.   6,3" - commit size</note>
       <xloc>488</xloc>
       <yloc>60</yloc>
-      <width>68</width>
-      <heigth>26</heigth>
-      <fontname>.SF NS Text</fontname>
+      <width>171</width>
+      <heigth>58</heigth>
+      <fontname>Monospaced</fontname>
       <fontsize>13</fontsize>
       <fontbold>N</fontbold>
       <fontitalic>N</fontitalic>
