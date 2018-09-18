@@ -1,0 +1,13 @@
+      <clusterschema>
+        <name>Cluster Local</name>
+        <base_port>40000</base_port>
+        <sockets_buffer_size>2000</sockets_buffer_size>
+        <sockets_flush_interval>5000</sockets_flush_interval>
+        <sockets_compressed>N</sockets_compressed>
+        <dynamic>N</dynamic>
+        <slaveservers>
+          <name>carte-8081</name>
+          <name>carte-8082</name>
+          <name>carte-8083</name>
+        </slaveservers>
+      </clusterschema>

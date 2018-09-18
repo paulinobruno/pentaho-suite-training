@@ -422,13 +422,65 @@
     <partitionschemas>
     </partitionschemas>
     <slaveservers>
+      <slaveserver>
+        <name>carte-8081</name>
+        <hostname>localhost</hostname>
+        <port>8081</port>
+        <webAppName />
+        <username>cluster</username>
+        <password>Encrypted 2be98afc86aa7f2e4cb1aa265cd86aac8</password>
+        <proxy_hostname />
+        <proxy_port />
+        <non_proxy_hosts />
+        <master>Y</master>
+        <sslMode>N</sslMode>
+      </slaveserver>
+      <slaveserver>
+        <name>carte-8082</name>
+        <hostname>localhost</hostname>
+        <port>8082</port>
+        <webAppName />
+        <username>cluster</username>
+        <password>Encrypted 2be98afc86aa7f2e4cb1aa265cd86aac8</password>
+        <proxy_hostname />
+        <proxy_port />
+        <non_proxy_hosts />
+        <master>N</master>
+        <sslMode>N</sslMode>
+      </slaveserver>
+      <slaveserver>
+        <name>carte-8083</name>
+        <hostname>localhost</hostname>
+        <port>8083</port>
+        <webAppName />
+        <username>cluster</username>
+        <password>Encrypted 2be98afc86aa7f2e4cb1aa265cd86aac8</password>
+        <proxy_hostname />
+        <proxy_port />
+        <non_proxy_hosts />
+        <master>N</master>
+        <sslMode>N</sslMode>
+      </slaveserver>
     </slaveservers>
     <clusterschemas>
+      <clusterschema>
+        <name>Cluster Local</name>
+        <base_port>40000</base_port>
+        <sockets_buffer_size>2000</sockets_buffer_size>
+        <sockets_flush_interval>5000</sockets_flush_interval>
+        <sockets_compressed>N</sockets_compressed>
+        <dynamic>N</dynamic>
+        <slaveservers>
+          <name>carte-8081</name>
+          <name>carte-8082</name>
+          <name>carte-8083</name>
+        </slaveservers>
+      </clusterschema>
     </clusterschemas>
     <created_user>-</created_user>
     <created_date>2017/12/26 19:18:26.458</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2018/09/18 16:39:06.733</modified_date>
+    <modified_date>2018/09/18 17:10:33.125</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -476,7 +528,7 @@
         <valuefield />
       </field>
     </fields>
-    <cluster_schema />
+    <cluster_schema>Cluster Local</cluster_schema>
     <remotesteps>
       <input>
       </input>
